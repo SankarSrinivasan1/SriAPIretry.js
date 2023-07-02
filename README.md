@@ -79,7 +79,7 @@ The SriApiRetry constructor accepts an optional `options` object with the follow
 - `retryableErrors` (array of strings, default: []): An array of error codes or messages that should trigger a retry of the API request.
 
 ## Full usage code
-´´´JavaScript 
+´´´javascript
 // Create an instance of SriApiRetry with desired options
 const apiRetry = new SriApiRetry({
   maxAttempts: 5,
