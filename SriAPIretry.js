@@ -1,3 +1,6 @@
+// SriApiRetry.js is a JavaScript library that simplifies the implementation of retry logic for API calls.
+// Contact Sankar Srinivasan petra.srini@gmail.com 
+
 class SriApiRetry {
   constructor(options = {}) {
     this.maxAttempts = options.maxAttempts || 3;
