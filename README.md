@@ -86,9 +86,7 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 
 This project is licensed under the [MIT License](LICENSE).
 
----
-
 That's it! You can now use SriApiRetry.js to simplify the implementation of retry logic for your API calls and enhance the reliability of your application's API interactions.
 
-Blog post
+## Blog post
 https://sankarsrinivasan.stck.me/post/100401/SriApiRetry-js-Simplify-API-Retry-Logic
