@@ -1,5 +1,3 @@
-Certainly! Here's an example of a README file for the "SriApiRetry.js" library:
-
 # SriApiRetry.js
 
 SriApiRetry.js is a JavaScript library that simplifies the implementation of retry logic for API calls. It handles scenarios where API requests may fail due to network issues, server errors, or rate limits, and automatically retries the requests with customizable backoff strategies. By integrating SriApiRetry.js into your application, you can enhance the reliability and resilience of your API interactions.
@@ -79,6 +77,36 @@ The SriApiRetry constructor accepts an optional `options` object with the follow
 - `maxAttempts` (number, default: 3): The maximum number of retry attempts for a failed API request.
 - `backoffStrategy` (string, default: 'exponential'): The backoff strategy to use for delaying retries. Possible values are 'exponential' or 'linear'.
 - `retryableErrors` (array of strings, default: []): An array of error codes or messages that should trigger a retry of the API request.
+
+## Full usage code
+´´´JavaScript 
+// Create an instance of SriApiRetry with desired options
+const apiRetry = new SriApiRetry({
+  maxAttempts: 5,
+  backoffStrategy: 'exponential',
+  retryableErrors: ['500', '502', '503'],
+});
+
+// Make an API request using the retry logic
+const apiUrl = 'https://example.com/api/endpoint';
+const requestOptions = {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+};
+
+apiRetry
+  .request(apiUrl, requestOptions)
+  .then((response) => {
+    console.log('API response:', response);
+    // Handle the API response
+  })
+  .catch((error) => {
+    console.error('API request failed:', error);
+    // Handle the API request failure
+  });
+´´´
 
 ## Contributing
 
