@@ -78,36 +78,6 @@ The SriApiRetry constructor accepts an optional `options` object with the follow
 - `backoffStrategy` (string, default: 'exponential'): The backoff strategy to use for delaying retries. Possible values are 'exponential' or 'linear'.
 - `retryableErrors` (array of strings, default: []): An array of error codes or messages that should trigger a retry of the API request.
 
-## Full usage code
-´´´javascript
-// Create an instance of SriApiRetry with desired options
-const apiRetry = new SriApiRetry({
-  maxAttempts: 5,
-  backoffStrategy: 'exponential',
-  retryableErrors: ['500', '502', '503'],
-});
-
-// Make an API request using the retry logic
-const apiUrl = 'https://example.com/api/endpoint';
-const requestOptions = {
-  method: 'GET',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-};
-
-apiRetry
-  .request(apiUrl, requestOptions)
-  .then((response) => {
-    console.log('API response:', response);
-    // Handle the API response
-  })
-  .catch((error) => {
-    console.error('API request failed:', error);
-    // Handle the API request failure
-  });
-´´´
-
 ## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
